@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import Home from './pages/Home'
+import Home from './pages/Home/Home'
 import Movie from './pages/Movie'
 import Search from './pages/Search'
 import App from './App'
