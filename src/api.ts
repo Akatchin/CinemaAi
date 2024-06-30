@@ -16,5 +16,9 @@ export const api = {
     getTopRatedMovies: async () => {
         const req = await request(`/movie/top_rated?${apiKey}`);
         return req.data
+    },
+    search: async (query: string | null) => {
+        const req = await request(`/search/movie?${apiKey}&query=${query}`);
+        return req.data;
     }
 }

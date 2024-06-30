@@ -15,7 +15,7 @@ const Title = styled.h2`
     margin: 2rem 0 1rem;
 `;
 
-const MoviesContainer = styled.div`
+const MovieContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -24,4 +24,4 @@ const MoviesContainer = styled.div`
     margin: 0 auto;
 `;
 
-export {Container, Title, MoviesContainer}
+export {Container, Title, MovieContainer}

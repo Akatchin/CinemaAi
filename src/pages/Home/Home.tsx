@@ -19,10 +19,11 @@ const Home = () => {
         <Container>
             <Title>Melhores filmes</Title>
             <MoviesContainer>
+                {topMovies.length === 0 && <p>Carregando...</p>}
                 {topMovies.length > 0 && topMovies.map((movie) => {
                     return (
                     <>
-                    <MovieCard movie={movie}/>
+                    <MovieCard key={movie.id} movie={movie}/>
                     </>)
                 })}
             </MoviesContainer>
