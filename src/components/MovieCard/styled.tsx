@@ -9,10 +9,12 @@ const CardContainer = styled.div`
     justify-content: space-between;
     background-color: #111;
     padding: 1rem;
-    &.title {color: red;}
+    text-align: center;
 `;
 
 const LinkButton = styled.a`
+    width: 75%;
+    margin-right: 0.5rem;
     background-color: #F7D354;
     border: 2px solid #F7D354;
     border-radius: 4px;
@@ -37,7 +39,20 @@ const Title = styled.h4`
 `
 
 const Text = styled.p`
-    margin-bottom: 1rem;
+    display flex;
+    margin: 0 0.5rem 1rem 0;
+`;
+
+const IconsContainer= styled.div`
+    display: flex;
+    align-content: center;
+`;
+
+const LikeButton = styled.a`
+    width: 25%;
+    background-color: black;
+    color: #e84227;
+    cursor: pointer;
 `;
     
-export { LinkButton, Title, Text, CardContainer, Image }
+export { LinkButton, Title, Text, CardContainer, Image, IconsContainer, LikeButton }

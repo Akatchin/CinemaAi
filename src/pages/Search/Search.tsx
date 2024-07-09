@@ -4,6 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import { api } from "../../api";
 import { MovieCard } from "../../components/MovieCard/MovieCard";
 import { Container, Title, MovieContainer } from "./styled";
+import { Types } from "../../types";
 
 
 
@@ -15,7 +16,6 @@ const Search = () => {
     const query = searchParams.get("q");
 
     useEffect(() => {
-        
         api.search(query)
         .then((data) => {
             setMovies(data.results);
@@ -28,10 +28,10 @@ const Search = () => {
         <Title>Resultados para: {query} </Title>
         <MovieContainer>
             {movies.length === 0 && <p>Carregando...</p>}
-            {movies.length > 0 && movies.map((movie) => {
+            {movies.length > 0 && movies.map((movie: Types) => {
                 return (
                 <>
-                <MovieCard key={movie.id} movie={movie}/>
+                <MovieCard click={undefined} key={movie.id} movie={movie}/>
                 </>)
             })}
         </MovieContainer>
