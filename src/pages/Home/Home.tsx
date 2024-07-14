@@ -5,7 +5,6 @@ import { FavContext } from "../../contexts/MovieList";
 import { Container, Title, MoviesContainer } from "./styled";
 import { MovieCard } from "../../components/MovieCard/MovieCard";
 import { Types } from "../../types";
-import { Link } from "react-router-dom";
 
 const Home = () => {
 
