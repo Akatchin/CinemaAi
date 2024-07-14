@@ -4,7 +4,7 @@ import { FaStar } from "react-icons/fa";
 import { api, imageurl } from "../../api";
 import { FavContext } from "../../contexts/MovieList";
 import { CardContainer, Image, Title, Text, MoviesContainer } from "./styled";
-import { Types } from "../../types";
+import { GeneralType } from "../../types";
 
 const Favorites = () => {
 
@@ -14,15 +14,14 @@ const Favorites = () => {
     useEffect(() => {
         api.getTopRatedMovies() 
             .then((res) => {
-                setTopMovies(res.results)
+                setTopMovies(res.results);
             })
-            console.log(topMovies)
     },[]);
 
 return (
     <MoviesContainer>
     {favorites.length === 0 && <p style={{color: 'white'}}>Sua lista está vázia</p>}
-    {topMovies.map((movie: Types) => {
+    {topMovies.map((movie: GeneralType) => {
         if(favorites.includes(movie.id)) {
             return (
                 <CardContainer>

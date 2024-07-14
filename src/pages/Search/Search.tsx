@@ -4,9 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import { api } from "../../api";
 import { MovieCard } from "../../components/MovieCard/MovieCard";
 import { Container, Title, MovieContainer } from "./styled";
-import { Types } from "../../types";
-
-
+import { GeneralType } from "../../types";
 
 const Search = () => {
 
@@ -28,7 +26,7 @@ const Search = () => {
         <Title>Resultados para: {query} </Title>
         <MovieContainer>
             {movies.length === 0 && <p>Carregando...</p>}
-            {movies.length > 0 && movies.map((movie: Types) => {
+            {movies.length > 0 && movies.map((movie: GeneralType) => {
                 return (
                 <>
                 <MovieCard showLink={true} click={() => {}} key={movie.id} movie={movie}/>

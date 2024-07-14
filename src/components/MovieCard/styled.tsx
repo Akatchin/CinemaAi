@@ -45,12 +45,12 @@ const Text = styled.p`
 
 const IconsContainer= styled.div`
     display: flex;
-    align-content: center;
+    align-items: center;
+    justify-content: center;
 `;
 
 const LikeButton = styled.a`
     width: 25%;
-    background-color: black;
     color: #e84227;
     cursor: pointer;
 `;

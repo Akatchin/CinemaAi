@@ -1,4 +1,4 @@
- type Types = {
+ type GeneralType = {
     id: number,
     title: string,
     poster_path: string,
@@ -13,7 +13,7 @@ type MovieType = {
     revenue: number;
     runtime: string;
     overview: string;
-    props: {
+    movie: {
         id: number,
         title: string,
         poster_path: string,
@@ -24,14 +24,14 @@ type MovieType = {
 type CardType = {
 
     click: Function;
+    showLink: boolean;
+
     movie: {
        id: number,
        title: string,
        poster_path: string,
        vote_average: number
     };
-    showLink: boolean;
-  
 }
 
-export type { Types, MovieType, CardType }
+export type { GeneralType, MovieType, CardType }

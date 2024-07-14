@@ -13,9 +13,9 @@ export const Navbar = () => {
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
-        if(!search) return
+        if(!search) return;
         navigate(`/search?q=${search}`);
-        setSearch("")
+        setSearch("");
     }
            
     return (
@@ -27,7 +27,7 @@ export const Navbar = () => {
                 </Link>
             </h2> 
             <Form onSubmit={handleSubmit} >
-                <Input type="text" onChange={(e) => setSearch(e.target.value)} placeholder="Busque um filmes"/>
+                <Input type="text" onChange={(e) => setSearch(e.target.value)} placeholder="Busque um filme"/>
                 <Button type="submit">
                     <BiSearchAlt2/>
                 </Button>

@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { 
     BsGraphUp, 
@@ -9,57 +9,62 @@ import {
 
 import { api } from "../../api";
 import { MovieCard } from "../../components/MovieCard/MovieCard";
-import { FavContext } from "../../contexts/MovieList";
 import { MoviePage, TagLine, Info, Description, Title, Text, Grid } from "./styled";
-import { MovieType } from "../../types";
 
 const Movie = () => {
     
     const {id} = useParams();
-    const [movie, setMovie] = useState<MovieType>();
-    const {favorites} = useContext(FavContext);
-
+    const [movies, setMovies] = useState({
+        id: 0,
+        title: '',
+        poster_path: '',
+        vote_average: 0, 
+        budget: 0,
+        revenue: 0,
+        runtime: '',
+        overview: ''
+    });
+    
     useEffect(() => {
         api.getMovie(id)
             .then((res) => {
-                setMovie(res)
+                setMovies(res);
             })
-            console.log(favorites)
-    }, [])
+    }, []);
 
     const formatCurrency = (num: number) => {
         return num.toLocaleString("en-US", {
             style: "currency",
             currency: "USD"
-        })
-    }
+        });
+    };
 
     return (
         <MoviePage>
-            {movie && (
+            {movies && (
                 <>                
-                <MovieCard click={() => {}} movie={movie.props} showLink={false}/>
-                <TagLine>{movie.title}</TagLine>
+                <MovieCard click={() => {}} movie={movies} showLink={false}/>
+                <TagLine>{movies.title}</TagLine>
                 <Grid>
                   <Info>
                     <Title>
                         <BsWallet2 style={{fontSize: "1.5rem", color: "#F7D354"}}/> Orçamento:
                     </Title>
-                    <Text>{formatCurrency(movie.budget)}</Text>
+                    <Text>{formatCurrency(movies.budget)}</Text>
                   </Info>
 
                   <Info>
                     <Title>
                         <BsGraphUp style={{fontSize: "1.5rem", color: "#F7D354"}}/> Receita:
                     </Title>
-                    <Text>{formatCurrency(movie.revenue)}</Text>
+                    <Text>{formatCurrency(movies.revenue)}</Text>
                   </Info>
                 
                   <Info>
                     <Title>
                         <BsHourglassSplit style={{fontSize: "1.5rem", color: "#F7D354"}}/> Duração:
                     </Title>
-                    <Text>{movie.runtime} minutos</Text>
+                    <Text>{movies.runtime} minutos</Text>
                   </Info>
                   </Grid>
                   
@@ -67,7 +72,7 @@ const Movie = () => {
                     <Title>
                         <BsFillFileEarmarkTextFill style={{fontSize: "1.5rem", color: "#F7D354"}}/> Descrição:
                     </Title>
-                    <Text>{movie.overview}</Text>
+                    <Text>{movies.overview}</Text>
                   </Description>  
                 </>
             )}

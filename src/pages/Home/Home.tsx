@@ -4,7 +4,7 @@ import { api } from "../../api";
 import { FavContext } from "../../contexts/MovieList";
 import { Container, Title, MoviesContainer } from "./styled";
 import { MovieCard } from "../../components/MovieCard/MovieCard";
-import { Types } from "../../types";
+import { GeneralType } from "../../types";
 
 const Home = () => {
 
@@ -26,7 +26,7 @@ const Home = () => {
             setFavorites(Array.of(...favorites, favId));
             addFavorites(favorites);
         } else {
-            console.log("valor repetido")
+            console.log("valor repetido");
             return
         }
     }
@@ -36,10 +36,10 @@ const Home = () => {
             <Title>Melhores filmes</Title>
             <MoviesContainer>
                 {topMovies.length === 0 && <p>Carregando...</p>}
-                {topMovies.length > 0 && topMovies.map((movie: Types) => {
+                {topMovies.length > 0 && topMovies.map((movies: GeneralType) => {
                     return (
                     <>
-                    <MovieCard showLink={true} click={addFavList} key={movie.id} movie={movie}/>
+                    <MovieCard showLink={true} click={addFavList} key={movies.id} movie={movies}/>
                     </>)
                 })}
             </MoviesContainer>
