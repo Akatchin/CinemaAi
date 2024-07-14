@@ -13,6 +13,8 @@ type MovieType = {
     revenue: number;
     runtime: string;
     overview: string;
+    poster_path: string,
+    vote_average: number
     movie: {
         id: number,
         title: string,

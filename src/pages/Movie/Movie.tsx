@@ -10,26 +10,19 @@ import {
 import { api } from "../../api";
 import { MovieCard } from "../../components/MovieCard/MovieCard";
 import { MoviePage, TagLine, Info, Description, Title, Text, Grid } from "./styled";
+import { MovieType } from "../../types";
 
 const Movie = () => {
     
     const {id} = useParams();
-    const [movies, setMovies] = useState({
-        id: 0,
-        title: '',
-        poster_path: '',
-        vote_average: 0, 
-        budget: 0,
-        revenue: 0,
-        runtime: '',
-        overview: ''
-    });
+    const [movies, setMovies] = useState<MovieType>();
     
     useEffect(() => {
         api.getMovie(id)
             .then((res) => {
                 setMovies(res);
             })
+            console.log(movies);
     }, []);
 
     const formatCurrency = (num: number) => {
