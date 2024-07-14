@@ -44,7 +44,6 @@ const Home = () => {
                     </>)
                 })}
             </MoviesContainer>
-            <Link style={{color: 'white'}} to={"/favorites"}>Click</Link>
         </Container>
     )
 }
