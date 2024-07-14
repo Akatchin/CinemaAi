@@ -11,12 +11,12 @@ import { api } from "../../api";
 import { MovieCard } from "../../components/MovieCard/MovieCard";
 import { FavContext } from "../../contexts/MovieList";
 import { MoviePage, TagLine, Info, Description, Title, Text, Grid } from "./styled";
-import { movieType } from "../../types";
+import { MovieType } from "../../types";
 
 const Movie = () => {
     
     const {id} = useParams();
-    const [movie, setMovie] = useState<movieType>();
+    const [movie, setMovie] = useState<MovieType>();
     const {favorites} = useContext(FavContext);
 
     useEffect(() => {
@@ -38,7 +38,7 @@ const Movie = () => {
         <MoviePage>
             {movie && (
                 <>                
-                <MovieCard click={undefined} movie={movie} showLink={false}/>
+                <MovieCard click={() => {}} movie={movie.props} showLink={false}/>
                 <TagLine>{movie.title}</TagLine>
                 <Grid>
                   <Info>

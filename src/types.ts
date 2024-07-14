@@ -6,21 +6,32 @@
     showlink: boolean;
 }
 
-interface movieType {
-    id: string;
+type MovieType = {
+    id: number;
     title: string;
     budget: number;
     revenue: number;
     runtime: string;
     overview: string;
-    movie: {
+    props: {
         id: number,
         title: string,
         poster_path: string,
         vote_average: number
-    };
-    showLink: boolean;
-    click: (id: number) => {}
+     };
 }
 
-export type { Types, movieType }
+type CardType = {
+
+    click: Function;
+    movie: {
+       id: number,
+       title: string,
+       poster_path: string,
+       vote_average: number
+    };
+    showLink: boolean;
+  
+}
+
+export type { Types, MovieType, CardType }

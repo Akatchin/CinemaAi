@@ -40,8 +40,7 @@ const Home = () => {
                 {topMovies.length > 0 && topMovies.map((movie: Types) => {
                     return (
                     <>
-                    <MovieCard click={addFavList} key={movie.id} movie={movie}/>
-                    
+                    <MovieCard showLink={true} click={addFavList} key={movie.id} movie={movie}/>
                     </>)
                 })}
             </MoviesContainer>

@@ -31,7 +31,7 @@ const Search = () => {
             {movies.length > 0 && movies.map((movie: Types) => {
                 return (
                 <>
-                <MovieCard click={undefined} key={movie.id} movie={movie}/>
+                <MovieCard showLink={true} click={() => {}} key={movie.id} movie={movie}/>
                 </>)
             })}
         </MovieContainer>

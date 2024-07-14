@@ -3,11 +3,11 @@ import { FaStar } from "react-icons/fa";
 import { TiHeartOutline } from "react-icons/ti";
 
 import { imageurl } from "../../api";
-import { movieType } from "../../types";
+import { CardType } from "../../types";
 import { LinkButton, Text, Title, CardContainer, Image, IconsContainer, LikeButton } from "./styled";
 
 
-export const MovieCard = ({click, movie, showLink = true}: movieType) => {
+export const MovieCard = ({click, movie, showLink = true}: CardType) => {
     
     return (
         <CardContainer>
